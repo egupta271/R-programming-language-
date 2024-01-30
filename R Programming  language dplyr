@@ -1,0 +1,57 @@
+dplyr is a powerful and popular package in R for data manipulation. 
+It provides a set of functions that are designed to work together seamlessly, making it easy to express complex data manipulations using a clear and concise syntax.
+Here are some key functions and examples of using dplyr:
+
+Example 1: Filter Rows with filter()
+# Load dplyr
+library(dplyr)
+
+# Create a sample data frame
+data <- data.frame(
+  Name = c("Alice", "Bob", "Charlie", "David"),
+  Age = c(25, 30, 22, 35),
+  Salary = c(50000, 60000, 45000, 70000)
+)
+
+# Filter rows based on a condition (e.g., age greater than 25)
+filtered_data <- data %>% filter(Age > 25)
+
+# View the result
+print(filtered_data)
+
+Example 2: Select Columns with select()
+# Select specific columns
+selected_data <- data %>% select(Name, Salary)
+
+# View the result
+print(selected_data)
+
+Example 3: Arrange Rows with arrange()
+# Arrange data by a column (e.g., sort by Salary in descending order)
+sorted_data <- data %>% arrange(desc(Salary))
+
+# View the result
+print(sorted_data)
+
+Example 4: Mutate Columns with mutate()
+# Add a new column (e.g., calculate the bonus as 10% of Salary)
+mutated_data <- data %>% mutate(Bonus = 0.1 * Salary)
+
+# View the result
+print(mutated_data)
+
+Example 5: Summarize Data with summarize()
+# Summarize data (e.g., calculate the average salary)
+summary_stats <- data %>% summarize(AvgSalary = mean(Salary))
+
+# View the result
+print(summary_stats)
+
+Example 6: Group Data with group_by()
+# Group data by a column and calculate summary statistics within each group
+grouped_data <- data %>% 
+  group_by(Age) %>% 
+  summarize(AvgSalary = mean(Salary))
+
+# View the result
+print(grouped_data)
