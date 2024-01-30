@@ -1,0 +1,47 @@
+tidyr is a package in R that is part of the tidyverse collection. 
+It is designed to help you tidy and reshape your data. 
+The primary functions in tidyr are gather() and spread(), which are used for converting data between wide and long formats. 
+Here are some basic examples of using tidyr:
+
+Example 1: Reshaping Data with gather()
+# Load tidyr
+library(tidyr)
+
+# Create a sample data frame
+data_long <- data.frame(
+  ID = c(1, 2, 3),
+  Day1 = c(10, 15, 20),
+  Day2 = c(12, 18, 22),
+  Day3 = c(14, 20, 25)
+)
+
+# Original Data
+print("Original Data:")
+print(data_long)
+
+# Reshape data from wide to long
+data_long <- gather(data_long, key = "Day", value = "Value", -ID)
+
+# Tidied Data
+print("Tidied Data:")
+print(data_long)
+
+Example 2: Reshaping Data with spread()
+# Create a sample data frame
+data_wide <- data.frame(
+  ID = c(1, 2, 3),
+  Day1 = c(10, 15, 20),
+  Day2 = c(12, 18, 22),
+  Day3 = c(14, 20, 25)
+)
+
+# Original Data
+print("Original Data:")
+print(data_wide)
+
+# Reshape data from long to wide
+data_wide <- spread(data_wide, key = "Day", value = "Value")
+
+# Tidied Data
+print("Tidied Data:")
+print(data_wide)
