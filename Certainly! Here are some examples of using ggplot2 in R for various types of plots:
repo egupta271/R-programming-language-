@@ -1,0 +1,45 @@
+Example 1: Scatter Plot
+# Load ggplot2
+library(ggplot2)
+
+# Create a simple scatter plot
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  labs(title = "Scatter Plot of Weight vs. MPG", x = "Weight", y = "Miles per Gallon") +
+  theme_minimal()
+
+Example 2: Bar Plot
+# Create a bar plot
+ggplot(mtcars, aes(x = factor(cyl))) +
+  geom_bar() +
+  labs(title = "Bar Plot of Car Cylinders", x = "Cylinders", y = "Count") +
+  theme_minimal()
+
+Example 3: Line Plot
+# Create a line plot
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_line() +
+  labs(title = "Line Plot of Sepal Length vs. Sepal Width", x = "Sepal Length", y = "Sepal Width") +
+  theme_minimal()
+
+Example 4: Boxplot
+# Create a boxplot
+ggplot(mtcars, aes(x = factor(cyl), y = mpg)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of MPG by Number of Cylinders", x = "Cylinders", y = "Miles per Gallon") +
+  theme_minimal()
+Example 5: Histogram
+
+# Create a histogram
+ggplot(mtcars, aes(x = mpg)) +
+  geom_histogram(binwidth = 4, fill = "blue", color = "black", alpha = 0.7) +
+  labs(title = "Histogram of MPG", x = "Miles per Gallon", y = "Frequency") +
+  theme_minimal()
+Example 6: Faceted Plot
+
+# Create a faceted scatter plot
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  facet_wrap(~cyl) +
+  labs(title = "Scatter Plot of Weight vs. MPG Faceted by Cylinders", x = "Weight", y = "Miles per Gallon") +
+  theme_minimal()
