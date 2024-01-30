@@ -1,0 +1,58 @@
+A tibble is a modern data frame in R that is part of the tidyverse. 
+Tibbles are a modern alternative to the traditional R data frame, and they come with several advantages. Tibbles are created and used by the tibble package.
+
+Here are some key features and examples of using tibble:
+
+Example 1: Creating a Tibble
+# Load the tibble package
+library(tibble)
+
+# Create a tibble
+my_tibble <- tibble(
+  Name = c("Alice", "Bob", "Charlie"),
+  Age = c(25, 30, 22),
+  Salary = c(50000, 60000, 45000)
+)
+
+# Print the tibble
+print(my_tibble)
+
+Example 2: Printing Tibble Information
+# Print information about the tibble
+glimpse(my_tibble)
+The glimpse() function provides a concise summary of the structure of the tibble, including the data types and the first few observations.
+
+Example 3: Subsetting Columns
+# Select specific columns from the tibble
+selected_columns <- my_tibble %>% select(Name, Salary)
+
+# Print the result
+print(selected_columns)
+
+Example 4: Filtering Rows
+# Filter rows based on a condition
+filtered_rows <- my_tibble %>% filter(Age > 25)
+
+# Print the result
+print(filtered_rows)
+
+Example 5: Mutating Columns
+# Add a new column to the tibble
+mutated_tibble <- my_tibble %>% mutate(Bonus = 0.1 * Salary)
+
+# Print the result
+print(mutated_tibble)
+
+Example 6: Arranging Rows
+# Arrange rows based on a column
+arranged_tibble <- my_tibble %>% arrange(desc(Salary))
+
+# Print the result
+print(arranged_tibble)
+
+Example 7: Summarizing Data
+# Summarize data in the tibble
+summary_stats <- my_tibble %>% summarize(AvgSalary = mean(Salary))
+
+# Print the result
+print(summary_stats)
